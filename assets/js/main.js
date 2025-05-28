@@ -57,21 +57,6 @@ const navigation = {
         state.isMenuOpen = !state.isMenuOpen;
         elements.navLinks.classList.toggle('active');
         elements.burger.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-        
-        // Animate nav links with delay
-        const navItems = elements.navLinks.querySelectorAll('li');
-        navItems.forEach((item, index) => {
-            if (state.isMenuOpen) {
-                item.style.transitionDelay = `${index * 0.1}s`;
-                item.style.opacity = '1';
-                item.style.transform = 'translateX(0)';
-            } else {
-                item.style.transitionDelay = '0s';
-                item.style.opacity = '0';
-                item.style.transform = 'translateX(50px)';
-            }
-        });
     },
 
     closeMenu() {
@@ -253,10 +238,7 @@ const certifications = {
 // Event Listeners
 const initEventListeners = () => {
     // Navigation
-    elements.burger?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        navigation.toggleMenu();
-    });
+    elements.burger?.addEventListener('click', navigation.toggleMenu);
 
     elements.navLinks?.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', (e) => {
