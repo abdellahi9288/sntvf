@@ -59,13 +59,17 @@ const navigation = {
         elements.burger.classList.toggle('active');
         document.body.classList.toggle('menu-open');
         
-        // Animate nav links
+        // Animate nav links with delay
         const navItems = elements.navLinks.querySelectorAll('li');
         navItems.forEach((item, index) => {
             if (state.isMenuOpen) {
                 item.style.transitionDelay = `${index * 0.1}s`;
+                item.style.opacity = '1';
+                item.style.transform = 'translateX(0)';
             } else {
                 item.style.transitionDelay = '0s';
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(50px)';
             }
         });
     },
@@ -276,6 +280,13 @@ const initEventListeners = () => {
         if (state.isMenuOpen && 
             !elements.navLinks.contains(event.target) && 
             !elements.burger.contains(event.target)) {
+            navigation.closeMenu();
+        }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && state.isMenuOpen) {
             navigation.closeMenu();
         }
     });
