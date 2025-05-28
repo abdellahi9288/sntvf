@@ -213,6 +213,32 @@ body {
     margin-bottom: 1rem;
 }
 
+/* About Section List Styles */
+.about-list {
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+}
+
+.about-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color2);
+    font-size: 1.1rem;
+}
+
+.about-list i {
+    color: var(--color1);
+    font-size: 1.2rem;
+    min-width: 1.5rem;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
 /* Enhanced Services Section */
 .services {
     padding: 8rem 5%;
