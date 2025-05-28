@@ -2,10 +2,23 @@
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
 const navLinks = document.querySelectorAll('.nav-links li');
+const body = document.body;
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !burger.contains(e.target) && nav.classList.contains('nav-active')) {
+        nav.classList.remove('nav-active');
+        burger.classList.remove('toggle');
+        body.style.overflow = 'auto';
+    }
+});
 
 burger.addEventListener('click', () => {
     // Toggle Nav
     nav.classList.toggle('nav-active');
+    
+    // Toggle body scroll
+    body.style.overflow = nav.classList.contains('nav-active') ? 'hidden' : 'auto';
     
     // Animate Links
     navLinks.forEach((link, index) => {
@@ -18,6 +31,17 @@ burger.addEventListener('click', () => {
     
     // Burger Animation
     burger.classList.toggle('toggle');
+});
+
+// Close mobile menu when clicking a link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (nav.classList.contains('nav-active')) {
+            nav.classList.remove('nav-active');
+            burger.classList.remove('toggle');
+            body.style.overflow = 'auto';
+        }
+    });
 });
 
 // Smooth Scrolling for Navigation Links
@@ -120,4 +144,24 @@ style.textContent = `
         transform: rotate(45deg) translate(-5px, -6px);
     }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
+
+// Add responsive image handling
+document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (!img.hasAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+        }
+    });
+});
+
+// Add responsive font size adjustment
+const adjustFontSize = () => {
+    const vw = window.innerWidth;
+    const baseSize = Math.max(16, Math.min(20, vw / 50));
+    document.documentElement.style.fontSize = `${baseSize}px`;
+};
+
+window.addEventListener('resize', adjustFontSize);
+adjustFontSize(); 
