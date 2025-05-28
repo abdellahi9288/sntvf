@@ -10,7 +10,12 @@ body {
 }
 
 .nav-links li {
-    margin: 0 1.5rem;
+    margin-right: 0;
+    margin-left: 2rem;
+}
+
+.nav-links li:last-child {
+    margin-left: 0;
 }
 
 /* Ajustements pour les sections */
@@ -32,6 +37,11 @@ body {
     text-align: right;
 }
 
+.service-card i {
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
 /* Ajustements pour le formulaire de contact */
 .contact-form input,
 .contact-form textarea {
@@ -48,6 +58,10 @@ body {
 }
 
 /* Ajustements pour le footer */
+.footer-section {
+    text-align: right;
+}
+
 .footer-section h3::after {
     right: 0;
     left: auto;
@@ -57,9 +71,23 @@ body {
     transform: translateX(-5px);
 }
 
+.footer-section ul li {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+
 /* Ajustements pour les certifications */
 .certification-content {
     text-align: right;
+}
+
+.certification-item {
+    text-align: right;
+}
+
+.certification-icon {
+    margin-left: 1rem;
+    margin-right: 0;
 }
 
 /* Ajustements pour le menu burger en mobile */
@@ -96,6 +124,11 @@ h2::after {
     text-align: right;
 }
 
+.project-card .client {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+
 /* Ajustements pour les boutons */
 .cta-button,
 .submit-button {
@@ -104,8 +137,8 @@ h2::after {
 
 /* Ajustements pour les listes */
 ul {
-    padding-right: 0;
-    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-left: 0;
 }
 
 /* Ajustements pour les marges et paddings */
@@ -208,4 +241,63 @@ ul {
         border-right: none;
         border-top: 1px solid var(--color4);
     }
+}
+
+/* Ajustement des sections */
+section {
+    text-align: right;
+}
+
+/* Ajustement des articles d'expertise */
+#missions-expert-cybersecurite article {
+    text-align: right;
+}
+
+/* Ajustement des marges pour les titres */
+h2, h3, h4 {
+    text-align: right;
+}
+
+/* Ajustement des paragraphes */
+p {
+    text-align: right;
+}
+
+/* Ajustement des marges pour le conteneur principal */
+.container {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+/* Ajustement des marges pour les sections */
+section {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+/* Ajustement des marges pour le header */
+header {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+/* Ajustement des marges pour le footer */
+footer {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+/* Ajustement des icônes dans les listes */
+.about-list li i {
+    margin-left: 0.5rem;
+    margin-right: 0;
+}
+
+/* Ajustement des sections d'audit */
+.audit-content {
+    text-align: right;
+}
+
+.audit-section {
+    text-align: right;
 } 
