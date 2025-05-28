@@ -102,7 +102,7 @@ const navigation = {
     },
 
     handleResize() {
-        if (window.innerWidth > 768 && state.isMenuOpen) {
+        if (window.innerWidth > config.mobileBreakpoint && state.isMenuOpen) {
             navigation.closeMenu();
         }
     }
@@ -249,11 +249,25 @@ const certifications = {
 // Event Listeners
 const initEventListeners = () => {
     // Navigation
-    elements.burger?.addEventListener('click', navigation.toggleMenu);
+    elements.burger?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navigation.toggleMenu();
+    });
+
     elements.navLinks?.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            animations.scrollToSection(event);
-            navigation.closeMenu();
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - config.scrollOffset;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+                navigation.closeMenu();
+            }
         });
     });
 
