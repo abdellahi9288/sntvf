@@ -22,4 +22,129 @@
     line-height: 1.8;
     margin-bottom: 1.5em;
     text-justify: inter-word;
+}
+
+/* ===== CERTIFICATIONS SECTION ===== */
+.certifications {
+    padding: 80px 0;
+    background-color: var(--light-bg);
+}
+
+.certifications .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section Header */
+.certifications .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.certifications .section-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.certifications .section-header p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Certifications Grid */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Individual Certification Card */
+.certification-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Certification Image */
+.certification-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.certification-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Certification Title */
+.certification-card h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/* Certification Description */
+.certification-card p {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .certifications {
+        padding: 60px 0;
+    }
+
+    .certifications .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .certifications-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .certification-card {
+        padding: 20px;
+    }
+
+    .certification-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .certification-card h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .certifications .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certification-card {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 } 
