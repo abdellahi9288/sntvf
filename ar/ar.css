@@ -5,9 +5,13 @@ body {
     direction: rtl;
 }
 
-/* Ajustements pour la navigation */
+/* Styles de la barre de navigation */
+.navbar {
+    direction: rtl;
+}
+
 .nav-links {
-    flex-direction: row-reverse;
+    direction: rtl;
     margin-right: 0;
     margin-left: auto;
 }
@@ -117,18 +121,17 @@ body {
 /* Ajustements pour le menu burger en mobile */
 @media screen and (max-width: 768px) {
     .nav-links {
-        padding-right: 0;
-        padding-left: 2rem;
-    }
-
-    .nav-links li {
-        margin-right: 0;
-        margin-left: 1rem;
+        right: 0;
+        left: auto;
+        transform: translateX(100%);
     }
 
     .nav-links.active {
-        left: 0;
-        right: auto;
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
     }
 
     .about-content,
@@ -145,12 +148,10 @@ body {
     }
 
     .language-switch {
-        margin-right: 0;
-        margin-left: 1rem;
-        padding-right: 0;
-        padding-left: 1rem;
+        margin: 1rem 0;
+        padding: 1rem 0;
         border-right: none;
-        border-left: 1px solid var(--color4);
+        border-bottom: 2px solid var(--color4);
     }
 }
 
@@ -271,43 +272,18 @@ ul {
     margin-right: 2rem;
     padding-right: 2rem;
     border-right: 2px solid var(--color4);
+    border-left: none;
 }
 
-.language-switch .lang-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.language-switch a {
     font-weight: 600;
     color: var(--color5);
     transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    background-color: var(--color1);
-    border: 1px solid var(--color4);
 }
 
-.language-switch .lang-btn i {
-    font-size: 1.1rem;
-}
-
-.language-switch .lang-btn:hover {
+.language-switch a:hover {
     color: var(--color4);
     transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-@media screen and (max-width: 768px) {
-    .language-switch {
-        margin: 1rem 0;
-        padding: 1rem 0;
-        border-right: none;
-        border-top: 1px solid var(--color4);
-    }
-
-    .language-switch .lang-btn {
-        justify-content: center;
-        width: 100%;
-    }
 }
 
 /* Ajustement des sections */
@@ -373,4 +349,20 @@ footer {
 .audit-section ul li {
     padding-right: 1rem;
     padding-left: 0;
+}
+
+/* Ajustements pour le menu burger */
+.burger {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+/* Ajustements pour les informations de contact */
+.contact-info .info-item {
+    text-align: right;
+}
+
+.contact-info .info-item i {
+    margin-left: 0.5rem;
+    margin-right: 0;
 } 
