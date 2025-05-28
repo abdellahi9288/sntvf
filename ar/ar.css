@@ -8,21 +8,181 @@ body {
 /* Styles de la barre de navigation */
 .navbar {
     direction: rtl;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    margin-left: 2rem;
+    margin-right: 0;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
 }
 
 .nav-links {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
     direction: rtl;
-    margin-right: 0;
-    margin-left: auto;
 }
 
 .nav-links li {
-    margin-right: 0;
-    margin-left: 2rem;
+    margin: 0 1.5rem;
+    position: relative;
 }
 
-.nav-links li:last-child {
+.nav-links li a {
+    color: var(--color5);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.nav-links li a:hover {
+    color: var(--color4);
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color4);
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.language-switch {
+    margin-right: 2rem;
+    padding-right: 2rem;
+    border-right: 2px solid var(--color4);
+    border-left: none;
+}
+
+.language-switch a {
+    font-weight: 600;
+    color: var(--color5);
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background-color: var(--color1);
+    border: 1px solid var(--color4);
+}
+
+.language-switch a:hover {
+    color: var(--color4);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu burger */
+.burger {
+    display: none;
+    cursor: pointer;
+    margin-right: auto;
     margin-left: 0;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color5);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Media queries pour la navigation mobile */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        height: calc(100vh - 70px);
+        background-color: var(--color1);
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.5s;
+        padding: 2rem 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+        width: 100%;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+        display: block;
+        padding: 1rem;
+    }
+
+    .nav-links li a::after {
+        display: none;
+    }
+
+    .language-switch {
+        margin: 1.5rem 0;
+        padding: 1rem 0;
+        border-right: none;
+        border-bottom: 2px solid var(--color4);
+        width: 100%;
+    }
+
+    .language-switch a {
+        display: inline-block;
+        width: auto;
+        padding: 0.8rem 2rem;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger.active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.active .line2 {
+        opacity: 0;
+    }
+
+    .burger.active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+/* Animation pour le menu mobile */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Ajustements pour les sections */
@@ -116,43 +276,6 @@ body {
 .certification-icon {
     margin-right: 0;
     margin-left: 1rem;
-}
-
-/* Ajustements pour le menu burger en mobile */
-@media screen and (max-width: 768px) {
-    .nav-links {
-        right: 0;
-        left: auto;
-        transform: translateX(100%);
-    }
-
-    .nav-links.active {
-        transform: translateX(0);
-    }
-
-    .nav-links li {
-        margin: 1rem 0;
-    }
-
-    .about-content,
-    .contact-container,
-    .footer-content {
-        flex-direction: column;
-    }
-
-    .about-text,
-    .contact-form,
-    .footer-section {
-        margin-right: 0;
-        margin-left: 0;
-    }
-
-    .language-switch {
-        margin: 1rem 0;
-        padding: 1rem 0;
-        border-right: none;
-        border-bottom: 2px solid var(--color4);
-    }
 }
 
 /* Ajustements pour les statistiques */
@@ -267,25 +390,6 @@ ul {
     padding-left: var(--spacing) !important;
 }
 
-/* Language Switch Button */
-.language-switch {
-    margin-right: 2rem;
-    padding-right: 2rem;
-    border-right: 2px solid var(--color4);
-    border-left: none;
-}
-
-.language-switch a {
-    font-weight: 600;
-    color: var(--color5);
-    transition: all 0.3s ease;
-}
-
-.language-switch a:hover {
-    color: var(--color4);
-    transform: translateY(-2px);
-}
-
 /* Ajustement des sections */
 section {
     text-align: right;
@@ -349,12 +453,6 @@ footer {
 .audit-section ul li {
     padding-right: 1rem;
     padding-left: 0;
-}
-
-/* Ajustements pour le menu burger */
-.burger {
-    margin-right: auto;
-    margin-left: 0;
 }
 
 /* Ajustements pour les informations de contact */
