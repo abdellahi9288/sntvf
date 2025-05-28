@@ -1,0 +1,25 @@
+/* Remove language switcher and RTL styles */
+
+/* Mobile RTL Support */
+@media (max-width: 768px) {
+    [dir="rtl"] .nav-links {
+        flex-direction: column;
+    }
+
+    [dir="rtl"] .language-switcher {
+        margin: 10px 0;
+    }
+}
+
+.about-content .about-text p {
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.justified-text {
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+    text-justify: inter-word;
+} 
