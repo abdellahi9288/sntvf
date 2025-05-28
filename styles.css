@@ -938,12 +938,11 @@ footer {
     width: 120px;
     height: 120px;
     object-fit: contain;
-    filter: grayscale(100%);
-    transition: filter var(--transition-normal);
+    transition: transform var(--transition-normal);
 }
 
 .certification-item:hover .certification-icon img {
-    filter: grayscale(0%);
+    transform: scale(1.1);
 }
 
 .certification-content {
