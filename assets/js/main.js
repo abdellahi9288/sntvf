@@ -57,7 +57,17 @@ const navigation = {
         state.isMenuOpen = !state.isMenuOpen;
         elements.navLinks.classList.toggle('active');
         elements.burger.classList.toggle('active');
-        document.body.style.overflow = state.isMenuOpen ? 'hidden' : '';
+        document.body.classList.toggle('menu-open');
+        
+        // Animate nav links
+        const navItems = elements.navLinks.querySelectorAll('li');
+        navItems.forEach((item, index) => {
+            if (state.isMenuOpen) {
+                item.style.transitionDelay = `${index * 0.1}s`;
+            } else {
+                item.style.transitionDelay = '0s';
+            }
+        });
     },
 
     closeMenu() {
@@ -76,6 +86,11 @@ const navigation = {
             elements.navbar.classList.remove('scrolled');
         }
 
+        // Close menu on scroll
+        if (state.isMenuOpen && currentScrollY > 100) {
+            navigation.closeMenu();
+        }
+
         // Scroll to top button
         if (currentScrollY > 500) {
             elements.scrollTopBtn?.classList.add('visible');
@@ -84,6 +99,12 @@ const navigation = {
         }
 
         state.lastScrollY = currentScrollY;
+    },
+
+    handleResize() {
+        if (window.innerWidth > 768 && state.isMenuOpen) {
+            navigation.closeMenu();
+        }
     }
 };
 
@@ -230,11 +251,26 @@ const initEventListeners = () => {
     // Navigation
     elements.burger?.addEventListener('click', navigation.toggleMenu);
     elements.navLinks?.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', animations.scrollToSection);
+        link.addEventListener('click', () => {
+            animations.scrollToSection(event);
+            navigation.closeMenu();
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+        if (state.isMenuOpen && 
+            !elements.navLinks.contains(event.target) && 
+            !elements.burger.contains(event.target)) {
+            navigation.closeMenu();
+        }
     });
 
     // Scroll
     window.addEventListener('scroll', utils.throttle(navigation.handleScroll, 100));
+    
+    // Resize
+    window.addEventListener('resize', utils.debounce(navigation.handleResize, 250));
 
     // Forms
     document.querySelectorAll('form').forEach(form => {
