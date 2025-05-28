@@ -1,0 +1,211 @@
+/* Styles spécifiques pour la version arabe */
+body {
+    font-family: 'Cairo', sans-serif;
+    text-align: right;
+}
+
+/* Ajustements pour la navigation */
+.nav-links {
+    flex-direction: row-reverse;
+}
+
+.nav-links li {
+    margin: 0 1.5rem;
+}
+
+/* Ajustements pour les sections */
+.about-content {
+    direction: rtl;
+}
+
+.about-list li {
+    flex-direction: row-reverse;
+}
+
+.about-list i {
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
+/* Ajustements pour les cartes de service */
+.service-card {
+    text-align: right;
+}
+
+/* Ajustements pour le formulaire de contact */
+.contact-form input,
+.contact-form textarea {
+    text-align: right;
+}
+
+.contact-info .info-item {
+    flex-direction: row-reverse;
+}
+
+.contact-info .info-item i {
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
+/* Ajustements pour le footer */
+.footer-section h3::after {
+    right: 0;
+    left: auto;
+}
+
+.footer-section a:hover {
+    transform: translateX(-5px);
+}
+
+/* Ajustements pour les certifications */
+.certification-content {
+    text-align: right;
+}
+
+/* Ajustements pour le menu burger en mobile */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        right: auto;
+        left: -100%;
+    }
+
+    .nav-links.active {
+        left: 0;
+        right: auto;
+    }
+}
+
+/* Ajustements pour les statistiques */
+.about-stats {
+    direction: rtl;
+}
+
+/* Ajustements pour les liens sociaux */
+.social-links {
+    flex-direction: row-reverse;
+}
+
+/* Ajustements pour les titres de section */
+h2::after {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+/* Ajustements pour les cartes de projet */
+.project-card {
+    text-align: right;
+}
+
+/* Ajustements pour les boutons */
+.cta-button,
+.submit-button {
+    text-align: center;
+}
+
+/* Ajustements pour les listes */
+ul {
+    padding-right: 0;
+    padding-left: 1.5rem;
+}
+
+/* Ajustements pour les marges et paddings */
+.ml-auto {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
+.mr-auto {
+    margin-right: 0 !important;
+    margin-left: auto !important;
+}
+
+/* Ajustements pour les flèches et icônes */
+.fa-chevron-right::before {
+    content: "\f053";
+}
+
+.fa-chevron-left::before {
+    content: "\f054";
+}
+
+/* Ajustements pour les animations */
+[data-aos] {
+    direction: rtl;
+}
+
+/* Ajustements pour les grilles */
+.certifications-grid,
+.services-grid {
+    direction: rtl;
+}
+
+/* Ajustements pour les espacements */
+.about-content,
+.contact-container {
+    direction: rtl;
+}
+
+/* Ajustements pour les textes justifiés */
+.justified-text {
+    text-align: justify;
+    text-align-last: right;
+}
+
+/* Ajustements pour les éléments flottants */
+.float-right {
+    float: left !important;
+}
+
+.float-left {
+    float: right !important;
+}
+
+/* Ajustements pour les marges négatives */
+.ml-n1, .ml-n2, .ml-n3, .ml-n4, .ml-n5 {
+    margin-left: 0 !important;
+    margin-right: var(--spacing) !important;
+}
+
+.mr-n1, .mr-n2, .mr-n3, .mr-n4, .mr-n5 {
+    margin-right: 0 !important;
+    margin-left: var(--spacing) !important;
+}
+
+/* Ajustements pour les paddings */
+.pl-1, .pl-2, .pl-3, .pl-4, .pl-5 {
+    padding-left: 0 !important;
+    padding-right: var(--spacing) !important;
+}
+
+.pr-1, .pr-2, .pr-3, .pr-4, .pr-5 {
+    padding-right: 0 !important;
+    padding-left: var(--spacing) !important;
+}
+
+/* Language Switch Button */
+.language-switch {
+    margin-right: 2rem;
+    padding-right: 2rem;
+    border-right: 1px solid var(--color4);
+    border-left: none;
+}
+
+.language-switch a {
+    font-weight: 600;
+    color: var(--color5);
+    transition: all 0.3s ease;
+}
+
+.language-switch a:hover {
+    color: var(--color4);
+    transform: translateY(-2px);
+}
+
+@media screen and (max-width: 768px) {
+    .language-switch {
+        margin: 1rem 0;
+        padding: 1rem 0;
+        border-right: none;
+        border-top: 1px solid var(--color4);
+    }
+} 

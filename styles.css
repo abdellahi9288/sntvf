@@ -1134,4 +1134,31 @@ footer {
     #missions-expert-cybersecurite h3 {
         font-size: 1.2rem;
     }
+}
+
+/* Language Switch Button */
+.language-switch {
+    margin-left: 2rem;
+    padding-left: 2rem;
+    border-left: 1px solid var(--color4);
+}
+
+.language-switch a {
+    font-weight: 600;
+    color: var(--color5);
+    transition: all 0.3s ease;
+}
+
+.language-switch a:hover {
+    color: var(--color4);
+    transform: translateY(-2px);
+}
+
+@media screen and (max-width: 768px) {
+    .language-switch {
+        margin: 1rem 0;
+        padding: 1rem 0;
+        border-left: none;
+        border-top: 1px solid var(--color4);
+    }
 } 
