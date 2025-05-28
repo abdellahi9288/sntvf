@@ -2,15 +2,18 @@
 body {
     font-family: 'Cairo', sans-serif;
     text-align: right;
+    direction: rtl;
 }
 
 /* Ajustements pour la navigation */
 .nav-links {
     flex-direction: row-reverse;
+    margin-right: 0;
+    margin-left: auto;
 }
 
 .nav-links li {
-    margin-right: 2rem;
+    margin-right: 0;
     margin-left: 2rem;
 }
 
@@ -21,15 +24,22 @@ body {
 /* Ajustements pour les sections */
 .about-content {
     direction: rtl;
-}
-
-.about-list li {
     flex-direction: row-reverse;
 }
 
-.about-list i {
-    margin-left: 1rem;
+.about-text {
     margin-right: 0;
+    margin-left: 2rem;
+}
+
+.about-list li {
+    padding-right: 2rem;
+    padding-left: 0;
+}
+
+.about-list i {
+    margin-right: 0;
+    margin-left: 1rem;
 }
 
 /* Ajustements pour les cartes de service */
@@ -38,28 +48,37 @@ body {
 }
 
 .service-card i {
-    margin-left: 1rem;
     margin-right: 0;
+    margin-left: 1rem;
 }
 
 /* Ajustements pour le formulaire de contact */
-.contact-form input,
-.contact-form textarea {
-    text-align: right;
-}
-
-.contact-info .info-item {
+.contact-container {
     flex-direction: row-reverse;
 }
 
-.contact-info .info-item i {
-    margin-left: 1rem;
+.contact-form {
     margin-right: 0;
+    margin-left: 2rem;
+}
+
+.contact-info {
+    text-align: right;
+}
+
+.info-item i {
+    margin-right: 0;
+    margin-left: 1rem;
 }
 
 /* Ajustements pour le footer */
+.footer-content {
+    flex-direction: row-reverse;
+}
+
 .footer-section {
-    text-align: right;
+    margin-right: 0;
+    margin-left: 2rem;
 }
 
 .footer-section h3::after {
@@ -72,6 +91,11 @@ body {
 }
 
 .footer-section ul li {
+    padding-right: 0;
+    padding-left: 1rem;
+}
+
+.social-links a {
     margin-right: 0;
     margin-left: 1rem;
 }
@@ -86,20 +110,47 @@ body {
 }
 
 .certification-icon {
-    margin-left: 1rem;
     margin-right: 0;
+    margin-left: 1rem;
 }
 
 /* Ajustements pour le menu burger en mobile */
 @media screen and (max-width: 768px) {
     .nav-links {
-        right: auto;
-        left: -100%;
+        padding-right: 0;
+        padding-left: 2rem;
+    }
+
+    .nav-links li {
+        margin-right: 0;
+        margin-left: 1rem;
     }
 
     .nav-links.active {
         left: 0;
         right: auto;
+    }
+
+    .about-content,
+    .contact-container,
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .about-text,
+    .contact-form,
+    .footer-section {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .language-switch {
+        margin-right: 0;
+        margin-left: 1rem;
+        padding-right: 0;
+        padding-left: 1rem;
+        border-right: none;
+        border-left: 1px solid var(--color4);
     }
 }
 
@@ -217,10 +268,12 @@ ul {
 
 /* Language Switch Button */
 .language-switch {
-    margin-right: 2rem;
-    padding-right: 2rem;
-    border-right: 1px solid var(--color4);
-    border-left: none;
+    margin-right: 0;
+    margin-left: 2rem;
+    border-right: none;
+    border-left: 2px solid var(--color4);
+    padding-right: 0;
+    padding-left: 2rem;
 }
 
 .language-switch a {
@@ -236,10 +289,12 @@ ul {
 
 @media screen and (max-width: 768px) {
     .language-switch {
-        margin: 1rem 0;
-        padding: 1rem 0;
+        margin-right: 0;
+        margin-left: 1rem;
+        padding-right: 0;
+        padding-left: 1rem;
         border-right: none;
-        border-top: 1px solid var(--color4);
+        border-left: 1px solid var(--color4);
     }
 }
 
@@ -295,9 +350,15 @@ footer {
 
 /* Ajustement des sections d'audit */
 .audit-content {
-    text-align: right;
+    flex-direction: row-reverse;
 }
 
 .audit-section {
-    text-align: right;
+    margin-right: 0;
+    margin-left: 2rem;
+}
+
+.audit-section ul li {
+    padding-right: 1rem;
+    padding-left: 0;
 } 
