@@ -19,6 +19,7 @@
     --container-padding: 5%;
     --border-radius-md: 10px;
     --shadow-md: 0 3px 10px rgba(0,0,0,0.05);
+    --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
     --transition-normal: 0.3s ease;
 }
 
@@ -829,23 +830,59 @@ footer {
 /* Certifications Section */
 .certifications {
     padding: var(--spacing-xl) 0;
-    background-color: var(--color-lighter);
+    background: linear-gradient(135deg, var(--color-lighter) 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.certifications::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="%232C3E5C" opacity="0.05"/></svg>');
+    opacity: 0.5;
 }
 
 .certifications h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     font-size: 2.5rem;
     color: var(--color1);
+    position: relative;
+}
+
+.certifications h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--color2);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.section-description {
+    text-align: center;
+    color: var(--color2);
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-lg);
     max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0 var(--container-padding);
+    position: relative;
+    z-index: 1;
 }
 
 .certification-item {
@@ -854,34 +891,90 @@ footer {
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-md);
     text-align: center;
-    transition: transform var(--transition-normal);
+    transition: all var(--transition-normal);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 200px;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.certification-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--color2) 0%, var(--color3) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    z-index: 0;
 }
 
 .certification-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
 }
 
-.certification-item img {
+.certification-item:hover::before {
+    opacity: 0.05;
+}
+
+.certification-icon {
+    position: relative;
+    z-index: 1;
+    margin-bottom: var(--spacing-md);
+    transition: transform var(--transition-normal);
+}
+
+.certification-item:hover .certification-icon {
+    transform: scale(1.1);
+}
+
+.certification-icon img {
     width: 120px;
     height: 120px;
     object-fit: contain;
-    margin-bottom: var(--spacing-md);
+    filter: grayscale(100%);
+    transition: filter var(--transition-normal);
 }
 
-.certification-item p {
-    color: var(--color-primary);
-    font-weight: 500;
-    margin-top: auto;
+.certification-item:hover .certification-icon img {
+    filter: grayscale(0%);
+}
+
+.certification-content {
+    position: relative;
+    z-index: 1;
+}
+
+.certification-content h3 {
+    color: var(--color1);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    transition: color var(--transition-normal);
+}
+
+.certification-content p {
+    color: var(--color2);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.certification-item:hover .certification-content h3 {
+    color: var(--color2);
 }
 
 @media screen and (max-width: 768px) {
     .certifications-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .certification-item {
+        min-height: 250px;
     }
 }
 
@@ -890,8 +983,13 @@ footer {
         grid-template-columns: 1fr;
     }
     
-    .certification-item img {
-        max-width: 120px;
+    .certification-item {
+        min-height: 220px;
+    }
+    
+    .certification-icon img {
+        width: 100px;
+        height: 100px;
     }
 }
 

@@ -171,6 +171,60 @@ const forms = {
     }
 };
 
+// Certifications Section Animations
+const certifications = {
+    init() {
+        this.certificationItems = document.querySelectorAll('.certification-item');
+        this.setupIntersectionObserver();
+        this.setupHoverEffects();
+    },
+
+    setupIntersectionObserver() {
+        const options = {
+            threshold: 0.2,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        this.certificationItems.forEach(item => {
+            observer.observe(item);
+        });
+    },
+
+    setupHoverEffects() {
+        this.certificationItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                this.animateItem(item, true);
+            });
+
+            item.addEventListener('mouseleave', () => {
+                this.animateItem(item, false);
+            });
+        });
+    },
+
+    animateItem(item, isEntering) {
+        const icon = item.querySelector('.certification-icon');
+        const content = item.querySelector('.certification-content');
+        
+        if (isEntering) {
+            icon.style.transform = 'scale(1.1)';
+            content.style.transform = 'translateY(-5px)';
+        } else {
+            icon.style.transform = 'scale(1)';
+            content.style.transform = 'translateY(0)';
+        }
+    }
+};
+
 // Event Listeners
 const initEventListeners = () => {
     // Navigation
@@ -204,6 +258,7 @@ const initEventListeners = () => {
 const init = () => {
     initEventListeners();
     navigation.handleScroll(); // Initial check for scroll position
+    certifications.init();
 };
 
 // Start the application
