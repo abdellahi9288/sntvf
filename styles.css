@@ -11,6 +11,15 @@
     --color3: #6B84A3;
     --color4: #8CA3C1;
     --color5: #B0C4DE;
+    --color-lighter: #f0f0f0;
+    --color-primary: #2C3E5C;
+    --spacing-xl: 8rem;
+    --spacing-lg: 2.5rem;
+    --container-max-width: 1200px;
+    --container-padding: 5%;
+    --border-radius-md: 10px;
+    --shadow-md: 0 3px 10px rgba(0,0,0,0.05);
+    --transition-normal: 0.3s ease;
 }
 
 body {
@@ -793,8 +802,8 @@ footer {
 
 /* Certifications Section */
 .certifications {
-    padding: 5rem 5%;
-    background-color: var(--color5);
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-lighter);
 }
 
 .certifications h2 {
@@ -807,35 +816,41 @@ footer {
 .certifications-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+    gap: var(--spacing-lg);
+    max-width: var(--container-max-width);
     margin: 0 auto;
+    padding: 0 var(--container-padding);
 }
 
 .certification-item {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
     text-align: center;
-    box-shadow: 0 3px 10px rgba(44,62,92,0.05);
-    border: 1px solid var(--color4);
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
 }
 
 .certification-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .certification-item img {
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 1rem;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: var(--spacing-md);
 }
 
 .certification-item p {
-    color: var(--color1);
+    color: var(--color-primary);
     font-weight: 500;
+    margin-top: auto;
 }
 
 @media screen and (max-width: 768px) {
