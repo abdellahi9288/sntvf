@@ -114,7 +114,7 @@ style.textContent = `
     .scroll-button {
         position: fixed;
         bottom: 20px;
-        left: 20px;
+        right: 20px;
         background-color: var(--color4);
         color: white;
         width: 40px;
@@ -145,7 +145,7 @@ style.textContent = `
     @keyframes navLinkFade {
         from {
             opacity: 0;
-            transform: translateX(-50px);
+            transform: translateX(50px);
         }
         to {
             opacity: 1;
