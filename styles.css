@@ -1315,18 +1315,18 @@ footer {
     font-weight: 600;
     color: var(--color5);
     transition: all 0.3s ease;
-    padding: 0.6rem 1.2rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 20px;
     background-color: var(--color1);
     border: 1px solid var(--color4);
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .language-switch a i {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .language-switch a:hover {
@@ -1338,8 +1338,8 @@ footer {
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
     .language-switch a {
-        padding: 0.5rem 1rem;
-        font-size: 0.95rem;
+        padding: 0.7rem 1.3rem;
+        font-size: 1.05rem;
     }
 }
 
@@ -1350,12 +1350,12 @@ footer {
     }
 
     .language-switch a {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 1rem;
+        padding: 0.6rem 1.1rem;
     }
 
     .language-switch a i {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 }
 
@@ -1367,30 +1367,30 @@ footer {
     }
 
     .language-switch a {
-        padding: 0.5rem 0.9rem;
-        font-size: 0.9rem;
+        padding: 0.6rem 1.1rem;
+        font-size: 1rem;
     }
 }
 
 @media screen and (max-width: 576px) {
     .language-switch a {
-        padding: 0.4rem 0.7rem;
-        font-size: 0.85rem;
+        padding: 0.5rem 0.9rem;
+        font-size: 0.95rem;
     }
 
     .language-switch a i {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
     }
 }
 
 /* iPhone SE and small devices */
 @media screen and (max-width: 375px) {
     .language-switch a {
-        padding: 0.35rem 0.6rem;
-        font-size: 0.8rem;
+        padding: 0.45rem 0.8rem;
+        font-size: 0.9rem;
     }
 
     .language-switch a i {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 } 
