@@ -105,41 +105,6 @@ body {
     width: 80%;
 }
 
-/* Mobile Navigation */
-.burger {
-    display: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1001;
-    width: 30px;
-    height: 30px;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.burger div {
-    width: 25px;
-    height: 3px;
-    background-color: var(--color5);
-    margin: 5px;
-    transition: all 0.3s ease;
-    border-radius: 2px;
-    position: absolute;
-    right: 0;
-}
-
-.burger div:nth-child(1) {
-    top: 5px;
-}
-
-.burger div:nth-child(2) {
-    top: 13px;
-}
-
-.burger div:nth-child(3) {
-    top: 21px;
-}
-
 /* Language Switch */
 .language-switch {
     margin-right: 1.5rem;
@@ -219,75 +184,19 @@ body {
         padding: 0.8rem 1rem;
     }
 
-    .burger {
-        display: block;
-        order: -1;
-    }
-
     .nav-links {
-        position: fixed;
-        right: -100%;
-        top: 70px;
-        height: calc(100vh - 70px);
-        width: 100%;
-        background: var(--color1);
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        transition: 0.5s ease;
-        padding: 2rem 0;
-        z-index: 999;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .nav-links.nav-active {
-        right: 0;
-    }
-
-    .nav-links li {
-        margin: 0;
-        width: 100%;
-        text-align: center;
-        opacity: 0;
-    }
-
-    .nav-links.nav-active li {
-        opacity: 1;
-    }
-
-    .nav-links a {
-        font-size: 1.1rem;
-        padding: 1rem;
-        display: block;
-        width: 100%;
-    }
-
-    .nav-links a::after {
         display: none;
     }
 
-    .nav-links a:hover {
-        background-color: var(--color4);
-        color: var(--color1);
-    }
-
     .language-switch {
-        margin: 1rem 0;
-        padding: 0.5rem 0;
+        margin: 0;
+        padding: 0;
         border: none;
-        width: 100%;
-        justify-content: center;
     }
 
     .language-switch a {
-        width: auto;
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    .language-switch a i {
-        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
     }
 }
 
@@ -300,18 +209,13 @@ body {
         height: 35px;
     }
 
-    .nav-links a {
-        font-size: 1rem;
-        padding: 0.8rem;
-    }
-
     .language-switch a {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
     }
 
     .language-switch a i {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 }
 
@@ -325,18 +229,13 @@ body {
         height: 30px;
     }
 
-    .nav-links a {
-        font-size: 0.95rem;
-        padding: 0.7rem;
-    }
-
     .language-switch a {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.75rem;
+        padding: 0.3rem 0.5rem;
+        font-size: 0.7rem;
     }
 
     .language-switch a i {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 }
 
