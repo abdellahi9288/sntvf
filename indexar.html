@@ -6,10 +6,10 @@
     <title>نتيت موريتانيا - مكتب التدقيق والاستشارات في الأمن السيبراني</title>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/variables.css">
-    <link rel="stylesheet" href="../assets/css/reset.css">
-    <link rel="stylesheet" href="../assets/css/utilities.css">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="ar.css">
     
     <!-- Fonts -->
@@ -24,19 +24,29 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="../l.jpeg" alt="شعار نتيت موريتانيا">
+                <img src="l.jpeg" alt="شعار نتيت موريتانيا">
             </div>
             <ul class="nav-links">
-                <li><a href="#accueil">الرئيسية</a></li>
-                <li><a href="#a-propos">من نحن</a></li>
-                <li><a href="#services">خدماتنا</a></li>
-                <li><a href="#audit">التدقيق والاختبارات</a></li>
-                <li><a href="#missions-expert-cybersecurite">الخبرة</a></li>
-                <li><a href="#projets">المشاريع</a></li>
                 <li><a href="#contact">اتصل بنا</a></li>
-                <li><a href="../index.html">FRANCAIS</a></li>
+                <li><a href="#projets">المشاريع</a></li>
+                <li><a href="#missions-expert-cybersecurite">الخبرة</a></li>
+                <li><a href="#audit">التدقيق والاختبارات</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#a-propos">من نحن</a></li>
+                <li><a href="#accueil">الرئيسية</a></li>
+                
+                
+                
+                
+               
                 
             </ul>
+            <div class="language-switch">
+                <a href="index.html" class="lang-btn">
+                    الفرنسية
+                    <i class="fas fa-globe"></i>
+                </a>
+            </div>
             <div class="burger">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -103,7 +113,7 @@
             <div class="certifications-grid">
                 <div class="certification-item" data-aos="fade-up">
                     <div class="certification-icon">
-                        <img src="../images/iso.png" alt="شهادة ISO 27001" loading="lazy">
+                        <img src="images/iso.png" alt="شهادة ISO 27001" loading="lazy">
                     </div>
                     <div class="certification-content">
                         <h3>ISO 27001</h3>
@@ -112,7 +122,7 @@
                 </div>
                 <div class="certification-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="certification-icon">
-                        <img src="../images/ISO9001.jpg" alt="شهادة ISO 9001" loading="lazy">
+                        <img src="images/ISO9001.jpg" alt="شهادة ISO 9001" loading="lazy">
                     </div>
                     <div class="certification-content">
                         <h3>ISO 9001</h3>
@@ -121,7 +131,7 @@
                 </div>
                 <div class="certification-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="certification-icon">
-                        <img src="../images/00201.png" alt="شهادة PECB" loading="lazy">
+                        <img src="images/00201.png" alt="شهادة PECB" loading="lazy">
                     </div>
                     <div class="certification-content">
                         <h3>PECB</h3>
@@ -130,7 +140,7 @@
                 </div>
                 <div class="certification-item" data-aos="fade-up" data-aos-delay="300">
                     <div class="certification-icon">
-                        <img src="../images/download.jpeg" alt="وزارة العدل" loading="lazy">
+                        <img src="images/download.jpeg" alt="وزارة العدل" loading="lazy">
                     </div>
                     <div class="certification-content">
                         <h3>وزارة العدل</h3>
@@ -310,27 +320,29 @@
         </section>
 
         <section id="projets" class="projects">
-            <h2>مشاريعنا</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="../images/project1.jpg" alt="مشروع 1">
-                    <div class="project-content">
-                        <h3>تطوير نظام إدارة الأمن السيبراني</h3>
-                        <p>تطوير وتنفيذ نظام متكامل لإدارة الأمن السيبراني لمؤسسة حكومية</p>
+            <h2>المشاريع المنفذة</h2>
+            <div class="projects-container">
+                <div class="project-year">
+                    <h3>2025</h3>
+                    <div class="project-card">
+                        <h4>نظام الأرشفة الإلكترونية</h4>
+                        <p class="client">العميل: وزارة البيئة</p>
+                        <p>نشر حل للأرشفة الرقمية يتيح مركزية الوثائق الإدارية والبحث السريع وتأمينها.</p>
                     </div>
-                </div>
-                <div class="project-card">
-                    <img src="../images/project2.jpg" alt="مشروع 2">
-                    <div class="project-content">
-                        <h3>تقييم المخاطر السيبرانية</h3>
-                        <p>تقييم شامل للمخاطر السيبرانية وتطوير خطة معالجة لمؤسسة مالية</p>
+                    <div class="project-card">
+                        <h4>نظام رقمنة القوانين والأنظمة القانونية</h4>
+                        <p class="client">العميل: وزارة العدل</p>
+                        <p>تصميم منصة متكاملة مع وصول آمن عبر الويب.</p>
                     </div>
-                </div>
-                <div class="project-card">
-                    <img src="../images/project3.jpg" alt="مشروع 3">
-                    <div class="project-content">
-                        <h3>تدريب الأمن السيبراني</h3>
-                        <p>برنامج تدريبي شامل في الأمن السيبراني لموظفي القطاع الخاص</p>
+                    <div class="project-card">
+                        <h4>موقع الويب وإدارة عروض الأسعار APM Shipping</h4>
+                        <p class="client">العميل: أبولوج موريتانيا</p>
+                        <p>إنشاء موقع ويب احترافي وأداة متكاملة لإدارة طلبات عروض الأسعار.</p>
+                    </div>
+                    <div class="project-card">
+                        <h4>المنصة البحرية IMAN</h4>
+                        <p class="client">العميل: IMAN</p>
+                        <p>تطوير منصة رقمية لإدارة العمليات البحرية.</p>
                     </div>
                 </div>
             </div>
@@ -374,13 +386,13 @@
             <div class="footer-section">
                 <h3>روابط سريعة</h3>
                 <ul>
-                    <li><a href="#accueil">الرئيسية</a></li>
-                    <li><a href="#a-propos">من نحن</a></li>
-                    <li><a href="#services">خدماتنا</a></li>
-                    <li><a href="#audit">التدقيق والاختبارات</a></li>
-                    <li><a href="#missions-expert-cybersecurite">الخبرة</a></li>
-                    <li><a href="#projets">المشاريع</a></li>
                     <li><a href="#contact">اتصل بنا</a></li>
+                    <li><a href="#projets">المشاريع</a></li>
+                    <li><a href="#missions-expert-cybersecurite">الخبرة</a></li>
+                    <li><a href="#audit">التدقيق والاختبارات</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#a-propos">من نحن</a></li>
+                    <li><a href="#accueil">الرئيسية</a></li>
                 </ul>
             </div>
             <div class="footer-section">
