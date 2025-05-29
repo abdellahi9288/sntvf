@@ -1,51 +1,3 @@
-// Mobile Navigation
-const burger = document.querySelector('.burger');
-const nav = document.querySelector('.nav-links');
-const navLinks = document.querySelectorAll('.nav-links li');
-const body = document.body;
-
-// Toggle mobile menu
-function toggleMenu() {
-    // Toggle Nav
-    nav.classList.toggle('nav-active');
-    
-    // Toggle Burger Animation
-    burger.classList.toggle('toggle');
-    
-    // Toggle Body Scroll
-    body.style.overflow = nav.classList.contains('nav-active') ? 'hidden' : '';
-    
-    // Animate Links
-    navLinks.forEach((link, index) => {
-        if (link.style.animation) {
-            link.style.animation = '';
-        } else {
-            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-        }
-    });
-}
-
-// Event Listeners
-burger.addEventListener('click', toggleMenu);
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (nav.classList.contains('nav-active') && 
-        !nav.contains(e.target) && 
-        !burger.contains(e.target)) {
-        toggleMenu();
-    }
-});
-
-// Close mobile menu when clicking on a link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (nav.classList.contains('nav-active')) {
-            toggleMenu();
-        }
-    });
-});
-
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -140,29 +92,6 @@ style.textContent = `
     .scroll-button:hover {
         transform: translateY(-3px);
         box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-
-    @keyframes navLinkFade {
-        from {
-            opacity: 0;
-            transform: translateX(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    .burger.toggle .line1 {
-        transform: rotate(45deg) translate(5px, 6px);
-    }
-
-    .burger.toggle .line2 {
-        opacity: 0;
-    }
-
-    .burger.toggle .line3 {
-        transform: rotate(-45deg) translate(5px, -6px);
     }
 `;
 document.head.appendChild(style);
