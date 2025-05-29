@@ -1337,14 +1337,6 @@ footer {
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
-    .navbar {
-        padding: 0.8rem 3%;
-    }
-
-    .nav-links li {
-        margin: 0 0.8rem;
-    }
-
     .language-switch a {
         padding: 0.4rem 0.8rem;
         font-size: 0.85rem;
@@ -1352,15 +1344,6 @@ footer {
 }
 
 @media screen and (max-width: 992px) {
-    .nav-links li {
-        margin: 0 0.5rem;
-    }
-
-    .nav-links a {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.6rem;
-    }
-
     .language-switch {
         margin-left: 1rem;
         padding-left: 1rem;
@@ -1377,14 +1360,6 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    .navbar {
-        padding: 0.8rem 1rem;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
     .language-switch {
         margin: 0;
         padding: 0;
@@ -1398,14 +1373,6 @@ footer {
 }
 
 @media screen and (max-width: 576px) {
-    .navbar {
-        padding: 0.8rem 0.5rem;
-    }
-
-    .logo img {
-        height: 35px;
-    }
-
     .language-switch a {
         padding: 0.3rem 0.6rem;
         font-size: 0.75rem;
@@ -1418,14 +1385,6 @@ footer {
 
 /* iPhone SE and small devices */
 @media screen and (max-width: 375px) {
-    .navbar {
-        padding: 0.6rem 0.5rem;
-    }
-
-    .logo img {
-        height: 30px;
-    }
-
     .language-switch a {
         padding: 0.3rem 0.5rem;
         font-size: 0.7rem;
