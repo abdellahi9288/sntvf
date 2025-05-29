@@ -25,10 +25,11 @@
 
 body {
     font-family: 'Cairo', sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
     color: var(--color1);
     background-color: #fff;
     direction: rtl;
+    font-size: 14px;
 }
 
 /* Navigation */
@@ -771,12 +772,29 @@ section {
 }
 
 /* Ajustement des marges pour les titres */
-h2, h3, h4 {
-    text-align: right;
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1rem;
 }
 
 /* Ajustement des paragraphes */
 p {
+    font-size: 0.95rem;
     text-align: right;
 }
 
@@ -1078,4 +1096,34 @@ button,
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+}
+
+.law-card h3 {
+    font-size: 1.1rem;
+}
+
+.law-card p {
+    font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-size: 0.9rem;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 0.9rem;
 } 
