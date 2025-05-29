@@ -631,6 +631,7 @@ body {
     padding: 8rem 5%;
     background: linear-gradient(135deg, #ffffff 0%, var(--color5) 100%);
     position: relative;
+    direction: rtl;
 }
 
 .contact h2 {
@@ -677,6 +678,7 @@ body {
     background-color: #ffffff;
     transition: all 0.3s ease;
     font-size: 1rem;
+    text-align: right;
 }
 
 .contact-form input:focus,
@@ -725,6 +727,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    flex-direction: row-reverse;
 }
 
 .info-item i {
@@ -740,6 +743,11 @@ body {
     transform: scale(1.1);
     background: var(--color2);
     color: white;
+}
+
+.info-item p {
+    text-align: right;
+    margin: 0;
 }
 
 /* Enhanced Footer */
