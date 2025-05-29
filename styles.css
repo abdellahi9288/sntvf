@@ -35,17 +35,30 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 0.8rem 5%;
     background-color: var(--color1);
     box-shadow: 0 2px 5px rgba(44,62,92,0.05);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
-    height: 50px;
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
 }
 
 .nav-links {
@@ -53,22 +66,42 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+    align-items: center;
 }
 
 .nav-links li {
-    margin: 0 1.5rem;
+    margin: 0 1rem;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--color5);
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color4);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
 .nav-links a:hover {
     color: var(--color4);
+}
+
+.nav-links a:hover::after {
+    width: 80%;
 }
 
 /* Mobile Navigation */
@@ -90,12 +123,31 @@ body {
     margin: 5px;
     transition: all 0.3s ease;
     border-radius: 2px;
+    position: absolute;
+    right: 0;
+}
+
+.burger div:nth-child(1) {
+    top: 5px;
+}
+
+.burger div:nth-child(2) {
+    top: 13px;
+}
+
+.burger div:nth-child(3) {
+    top: 21px;
 }
 
 /* Mobile Navigation Styles */
 @media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+
     .burger {
         display: block;
+        order: -1;
     }
 
     .nav-links {
@@ -111,6 +163,8 @@ body {
         transition: 0.5s ease;
         padding: 2rem 0;
         z-index: 999;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nav-links.nav-active {
@@ -118,10 +172,10 @@ body {
     }
 
     .nav-links li {
-        margin: 1.5rem 0;
-        opacity: 0;
+        margin: 0;
         width: 100%;
         text-align: center;
+        opacity: 0;
     }
 
     .nav-links.nav-active li {
@@ -130,14 +184,32 @@ body {
 
     .nav-links a {
         font-size: 1.1rem;
-        color: var(--color5);
-        display: block;
         padding: 1rem;
+        display: block;
+        width: 100%;
+    }
+
+    .nav-links a::after {
+        display: none;
     }
 
     .nav-links a:hover {
         background-color: var(--color4);
         color: var(--color1);
+    }
+
+    .language-switch {
+        margin: 1.5rem 0;
+        padding: 1rem 0;
+        border: none;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .language-switch a {
+        width: auto;
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
     }
 
     /* Burger Animation */
@@ -152,20 +224,54 @@ body {
     .burger.toggle .line3 {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+}
 
-    .language-switch {
-        margin: 1.5rem 0;
-        padding: 1rem 0;
-        border: none;
-        width: 100%;
-        text-align: center;
+@media screen and (max-width: 576px) {
+    .navbar {
+        padding: 0.8rem 0.5rem;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        padding: 0.8rem;
     }
 
     .language-switch a {
-        display: inline-block;
-        width: auto;
-        padding: 0.8rem 2rem;
-        margin: 0 auto;
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* iPhone SE and small devices */
+@media screen and (max-width: 375px) {
+    .navbar {
+        padding: 0.6rem 0.5rem;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+        padding: 0.7rem;
+    }
+
+    .language-switch a {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Fix for iOS Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
+    .nav-links {
+        height: -webkit-fill-available;
+        height: calc(100vh - 70px);
     }
 }
 
@@ -738,6 +844,14 @@ footer {
 
 /* Enhanced Responsive Design */
 @media screen and (max-width: 1200px) {
+    .navbar {
+        padding: 0.8rem 3%;
+    }
+
+    .nav-links li {
+        margin: 0 0.8rem;
+    }
+
     .hero h1 {
         font-size: 3.5rem;
     }
@@ -752,6 +866,25 @@ footer {
 }
 
 @media screen and (max-width: 992px) {
+    .nav-links li {
+        margin: 0 0.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .language-switch {
+        margin-left: 1rem;
+        padding-left: 1rem;
+    }
+
+    .language-switch a {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+
     .about-content,
     .contact-container {
         grid-template-columns: 1fr;
@@ -1171,15 +1304,14 @@ footer {
 
 /* Language Switch Button */
 .language-switch {
-    margin-left: 2rem;
-    padding-left: 2rem;
+    margin-left: 1.5rem;
+    padding-left: 1.5rem;
     border-left: 2px solid var(--color4);
-}
-
-.language-switch .lang-btn {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+}
+
+.language-switch a {
     font-weight: 600;
     color: var(--color5);
     transition: all 0.3s ease;
@@ -1187,13 +1319,17 @@ footer {
     border-radius: 20px;
     background-color: var(--color1);
     border: 1px solid var(--color4);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
 }
 
-.language-switch .lang-btn i {
-    font-size: 1.1rem;
+.language-switch a i {
+    font-size: 1rem;
 }
 
-.language-switch .lang-btn:hover {
+.language-switch a:hover {
     color: var(--color4);
     transform: translateY(-2px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -1207,7 +1343,7 @@ footer {
         border-top: 1px solid var(--color4);
     }
 
-    .language-switch .lang-btn {
+    .language-switch a {
         justify-content: center;
         width: 100%;
     }

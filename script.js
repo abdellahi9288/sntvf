@@ -8,10 +8,12 @@ const body = document.body;
 function toggleMenu() {
     // Toggle Nav
     nav.classList.toggle('nav-active');
+    
+    // Toggle Burger Animation
     burger.classList.toggle('toggle');
     
-    // Toggle body scroll
-    body.style.overflow = nav.classList.contains('nav-active') ? 'hidden' : 'auto';
+    // Toggle Body Scroll
+    body.style.overflow = nav.classList.contains('nav-active') ? 'hidden' : '';
     
     // Animate Links
     navLinks.forEach((link, index) => {
@@ -28,7 +30,9 @@ burger.addEventListener('click', toggleMenu);
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!nav.contains(e.target) && !burger.contains(e.target) && nav.classList.contains('nav-active')) {
+    if (nav.classList.contains('nav-active') && 
+        !nav.contains(e.target) && 
+        !burger.contains(e.target)) {
         toggleMenu();
     }
 });
@@ -48,9 +52,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const headerOffset = 70;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
             });
         }
     });
@@ -79,18 +87,20 @@ if (contactForm) {
 
 // Scroll to Top Button
 const scrollButton = document.createElement('button');
-scrollButton.innerHTML = '↑';
-scrollButton.className = 'scroll-top';
+scrollButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
+scrollButton.className = 'scroll-button';
 document.body.appendChild(scrollButton);
 
+// Show/hide scroll button
 window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 100) {
-        scrollButton.style.display = 'block';
+    if (window.pageYOffset > 300) {
+        scrollButton.classList.add('show');
     } else {
-        scrollButton.style.display = 'none';
+        scrollButton.classList.remove('show');
     }
 });
 
+// Scroll to top when clicking the button
 scrollButton.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
@@ -98,31 +108,40 @@ scrollButton.addEventListener('click', () => {
     });
 });
 
-// Add scroll button styles
+// Add styles for scroll button
 const style = document.createElement('style');
 style.textContent = `
-    .scroll-top {
+    .scroll-button {
         position: fixed;
         bottom: 20px;
         right: 20px;
+        background-color: var(--color4);
+        color: white;
         width: 40px;
         height: 40px;
-        background-color: #f8f9fa;
-        color: #333;
-        border: 1px solid #ddd;
         border-radius: 50%;
+        border: none;
         cursor: pointer;
-        display: none;
-        font-size: 20px;
-        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
         transition: all 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
-    
-    .scroll-top:hover {
-        background-color: #e9ecef;
-        border-color: #333;
+
+    .scroll-button.show {
+        opacity: 1;
+        visibility: visible;
     }
-    
+
+    .scroll-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
     @keyframes navLinkFade {
         from {
             opacity: 0;
@@ -132,22 +151,6 @@ style.textContent = `
             opacity: 1;
             transform: translateX(0);
         }
-    }
-    
-    .toggle .line1 {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    
-    .toggle .line2 {
-        opacity: 0;
-    }
-    
-    .toggle .line3 {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-
-    .nav-active {
-        transform: translateX(0%);
     }
 `;
 document.head.appendChild(style);
