@@ -152,6 +152,18 @@ style.textContent = `
             transform: translateX(0);
         }
     }
+
+    .burger.toggle .line1 {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
 `;
 document.head.appendChild(style);
 
