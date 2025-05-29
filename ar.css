@@ -182,6 +182,11 @@ body {
     .nav-links li {
         margin: 0 0.8rem;
     }
+
+    .language-switch a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -200,8 +205,12 @@ body {
     }
 
     .language-switch a {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .language-switch a i {
+        font-size: 0.9rem;
     }
 }
 
@@ -264,8 +273,8 @@ body {
     }
 
     .language-switch {
-        margin: 1.5rem 0;
-        padding: 1rem 0;
+        margin: 1rem 0;
+        padding: 0.5rem 0;
         border: none;
         width: 100%;
         justify-content: center;
@@ -273,21 +282,12 @@ body {
 
     .language-switch a {
         width: auto;
-        padding: 0.8rem 2rem;
-        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
     }
 
-    /* Burger Animation */
-    .burger.toggle .line1 {
-        transform: rotate(45deg) translate(5px, 6px);
-    }
-
-    .burger.toggle .line2 {
-        opacity: 0;
-    }
-
-    .burger.toggle .line3 {
-        transform: rotate(-45deg) translate(5px, -6px);
+    .language-switch a i {
+        font-size: 0.9rem;
     }
 }
 
@@ -306,8 +306,12 @@ body {
     }
 
     .language-switch a {
-        padding: 0.7rem 1.5rem;
-        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .language-switch a i {
+        font-size: 0.8rem;
     }
 }
 
@@ -327,8 +331,12 @@ body {
     }
 
     .language-switch a {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    .language-switch a i {
+        font-size: 0.75rem;
     }
 }
 
